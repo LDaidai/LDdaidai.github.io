@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	<div>
+		<header class="mui-bar mui-bar-nav">
+		    <h1 class="mui-title">Table</h1>
+		</header>
+		
+	</div>
+		<div class="mui-input-row">
+		    <input type="text" placeholder="请输入表格标题" id="inp" name="inp">
+		</div>	
+		<a href="addSounces.html"><button style="float: right; background-color: blue; color: white;" class="mui-btn">完成创建</button></a>
+							<br /><br />
+		<span style="font-size: 16px;">请添加表格的名称:</span>	
+							<br><br />
+	<div id="box">
+		<div class="mui-input-row">
+		    <input type="text" placeholder="请输入第1列列标题名称" id="inp" name="inp">
+		</div>		
+	</div>
+	<div>
+		<button type="button" class="mui-btn mui-btn-blue mui-btn-block" onclick="addinp()">添加</button>
+		<button type="button" class="mui-btn mui-btn-blue mui-btn-block" onclick="delinp()">删除</button>
+	</div>
+	<script>
+		var i=1;box=document.getElementById("box");
+		function addinp(){
+		var div=document.createElement("div");
+		div.setAttribute("class","mui-input-row");
+		var NewInput = document.createElement("input");
+		NewInput.setAttribute("size",5);
+  		NewInput.setAttribute("type","text");
+  		NewInput.setAttribute("id","inp");
+  		NewInput.setAttribute("name","inp");
+  		i++;
+  		NewInput.setAttribute("placeholder","请输入第"+i+"列列标题名称");
+  		div.appendChild(NewInput);
+			
+			box.appendChild(div);
+		}
+	
+	function delinp(){
+  	box.removeChild(box.childNodes[box.childNodes.length - 1])
+		i--;
+ }
+	
+
+</script>
+
+
+
+</body>
+
+
+</html>
